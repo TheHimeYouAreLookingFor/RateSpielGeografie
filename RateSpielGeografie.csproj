@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F85C4540-4BF9-458A-80DC-4AD37925FA48}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>RateSpielGeografie</RootNamespace>
+    <AssemblyName>RateSpielGeografie</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>packages\BouncyCastle.1.8.3.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Protobuf.3.6.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.16.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.8.0.16\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DB.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Land.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Question.cs" />
+    <Compile Include="Score.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Pictures\Back.pdn" />
+    <None Include="Pictures\CapitalGuess.pdn" />
+    <None Include="Pictures\Exit_Button.pdn" />
+    <None Include="Pictures\FlagGuess.pdn" />
+    <None Include="Pictures\LandGuess.pdn" />
+    <None Include="Pictures\Logo.pdn" />
+    <None Include="Pictures\Next.pdn" />
+    <None Include="Pictures\Start.pdn" />
+    <None Include="Pictures\Submit_answer.pdn" />
+    <None Include="Pictures\Window.pdn" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Flaggen\Afghanistan.png" />
+    <Content Include="Flaggen\Albanien.png" />
+    <Content Include="Flaggen\Algerien.png" />
+    <Content Include="Flaggen\Andorra.png" />
+    <Content Include="Flaggen\Angola.png" />
+    <Content Include="Flaggen\Antigua und Babuda.png" />
+    <Content Include="Flaggen\Argentinien.png" />
+    <Content Include="Flaggen\Armenien.png" />
+    <Content Include="Flaggen\Aserbaidschan.png" />
+    <Content Include="Flaggen\Australien.png" />
+    <Content Include="Flaggen\Belgien.png" />
+    <Content Include="Flaggen\Benin.png" />
+    <Content Include="Flaggen\Bhutan.png" />
+    <Content Include="Flaggen\Bolivien.png" />
+    <Content Include="Flaggen\Brasilien.png" />
+    <Content Include="Flaggen\Chile.png" />
+    <Content Include="Flaggen\China.png" />
+    <Content Include="Flaggen\Costa Rica.png" />
+    <Content Include="Flaggen\Daenemark.png" />
+    <Content Include="Flaggen\Demokratische Republik Kongo %28Zaire%29.png" />
+    <Content Include="Flaggen\Deutschland.png" />
+    <Content Include="Flaggen\Ecuador.png" />
+    <Content Include="Flaggen\Estland.png" />
+    <Content Include="Flaggen\Finnland.png" />
+    <Content Include="Flaggen\Frankreich.png" />
+    <Content Include="Flaggen\Italien.png" />
+    <Content Include="Flaggen\Japan.png" />
+    <Content Include="Flaggen\Kanada.png" />
+    <Content Include="Flaggen\Kolumbien.png" />
+    <Content Include="Flaggen\Oesterreich.png" />
+    <Content Include="Flaggen\Polen.png" />
+    <Content Include="Flaggen\Russische Foederation.png" />
+    <Content Include="Flaggen\Schweiz.png" />
+    <Content Include="Flaggen\Spanien.png" />
+    <Content Include="Flaggen\Suedkorea.png" />
+    <Content Include="Flaggen\Tschechische Republik.png" />
+    <Content Include="Flaggen\Tuerkei.png" />
+    <Content Include="Flaggen\Ukraine.png" />
+    <Content Include="Flaggen\Vereinigte Staaten von Amerika.png" />
+    <Content Include="Flaggen\Vereinigtes Koenigreich.png" />
+    <Content Include="Pictures\Back.png" />
+    <Content Include="Pictures\Background.png" />
+    <Content Include="Pictures\Border.png" />
+    <Content Include="Pictures\CapitalGuess.png" />
+    <None Include="Pictures\End_Game.png" />
+    <Content Include="Pictures\Exit_Button.png" />
+    <Content Include="Pictures\FlagGuess.png" />
+    <None Include="Pictures\Highscore.png" />
+    <Content Include="Pictures\LandGuess.png" />
+    <Content Include="Pictures\Logo.png" />
+    <Content Include="Pictures\Next.png" />
+    <None Include="Pictures\Send_Score.png" />
+    <Content Include="Pictures\Start.png" />
+    <Content Include="Pictures\Submit_answer.png" />
+    <None Include="Pictures\Submit_name.png" />
+    <Content Include="Pictures\Window.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
